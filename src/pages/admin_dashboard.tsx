@@ -6,11 +6,9 @@ import { cn } from '@/lib/utils';
 import {
   Building,
   AlertTriangle,
-  FileText,
   Building2,
   ArrowUpRight,
   Activity,
-  QrCode,
   Calendar,
   ChevronRight,
   Gauge,
