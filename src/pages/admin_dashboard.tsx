@@ -266,31 +266,32 @@ const Dashboard: React.FC = () => {
     <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 p-6 md:p-8 font-sans text-slate-900 dark:text-slate-100 transition-colors">
 
       {/* 1. Header / Welcome */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-          <div className="flex items-center gap-3 mb-2">
-            <p className="text-slate-500 dark:text-slate-400 font-medium flex items-center gap-2 text-sm">
-              <Calendar size={16} /> {dayjs().format('dddd, D MMMM YYYY')}
+          <div className="flex items-center gap-2 mb-2">
+            <Calendar className="w-4 h-4 text-slate-500 dark:text-slate-400" strokeWidth={1.5} />
+            <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">
+              {dayjs().format('dddd, D MMMM YYYY')}
             </p>
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-            {greeting.text}, <span className="text-blue-900 dark:text-blue-400">{user.name || 'Admin'}</span>
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+            {greeting.text}, <span className="text-[#0A1F44] dark:text-blue-400 capitalize">{user.name || 'Admin'}</span>
           </h1>
           {user.bio && (
-            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl italic text-sm">
+            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl text-sm font-medium opacity-80 italic">
               &ldquo;{user.bio}&rdquo;
             </p>
           )}
         </motion.div>
 
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-end gap-3">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full shadow-sm text-xs font-medium text-slate-600 dark:text-slate-400"
+            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full shadow-sm text-xs font-bold text-slate-600 dark:text-slate-400"
           >
             <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
-            System Operational
+            SYSTEM OPERATIONAL
           </motion.div>
         </div>
       </div>
