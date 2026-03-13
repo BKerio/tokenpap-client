@@ -17,6 +17,7 @@ import CompanyDashboard from '@/pages/vendor/CompanyDashboard';
 import IndividualDashboard from '@/pages/vendor/IndividualDashboard';
 import LipaTokenNaMpesa from '@/pages/vendor/LipaTokenNaMpesa';
 import VendingSettingsPage from '@/pages/admin/vending';
+import CustomerDashboard from '@/pages/customer/CustomerDashboard';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
               <Route path="branding" element={<Branding />} />
               <Route path="company" element={<CompanyDashboard />} />
               <Route path="individual" element={<IndividualDashboard />} />
+              <Route path="customer" element={<CustomerDashboard />} />
               <Route index element={<Dashboard />} />
 
             </Route>

@@ -49,7 +49,7 @@ const Sidebar = ({ user, sidebarOpen, isMobile, onLogout, onCloseMobile }: Sideb
     { name: 'Vending Control', icon: Activity, path: '/dashboard/vending-control' },
     { name: 'Roles & Permissions', icon: Shield, path: '/dashboard/roles-management' },
     { name: 'Vendor Management', icon: Building2, path: '/dashboard/vendors' },
-    { name: 'Vendor Overview', icon: Users, path: '/dashboard/vendor-overview' },
+    { name: 'Assigned Meters', icon: Users, path: '/dashboard/vendor-overview' },
     { name: 'Meter Management', icon: Gauge, path: '/dashboard/meters' },
     { name: 'Customer Overview', icon: Users, path: '/dashboard/customer-management' },
     { name: 'System Logs', icon: Activity, path: '/dashboard/auditlogs' },
@@ -81,8 +81,13 @@ const Sidebar = ({ user, sidebarOpen, isMobile, onLogout, onCloseMobile }: Sideb
       return ['Dashboard', 'Meter Management', 'Customer Overview', 'System Configuration', 'Account Settings', 'Branding', 'Lipia Token na Mpesa'].includes(link.name);
     }
 
-    // Default: see everything (as safe fallback)
-    return true;
+    // Customer specific view
+    if (user.role === 'customer') {
+      return ['Dashboard', 'Account Settings'].includes(link.name);
+    }
+
+    // Default: for other roles (attendance staff etc) or fallback
+    return ['Dashboard', 'Account Settings'].includes(link.name);
   });
 
   const handleLogout = async () => {

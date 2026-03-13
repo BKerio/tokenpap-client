@@ -9,6 +9,7 @@ import {
     X,
     Save,
     Phone,
+    Mail,
     MapPin,
     Gauge,
     UserCircle,
@@ -525,7 +526,16 @@ const CustomerManagement = () => {
                                             </div>
                                             <div>
                                                 <p className="font-bold text-slate-900 dark:text-white leading-none mb-1">{customer.name}</p>
-                                                <p className="text-xs text-slate-400">{customer.phone}</p>
+                                                <div className="flex flex-col gap-0.5">
+                                                    <p className="text-[10px] text-slate-400 font-medium flex items-center gap-1">
+                                                        <Phone size={10} /> {customer.phone}
+                                                    </p>
+                                                    {customer.email && (
+                                                        <p className="text-[10px] text-slate-400 font-medium flex items-center gap-1">
+                                                            <Mail size={10} /> {customer.email}
+                                                        </p>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -638,6 +648,19 @@ const CustomerManagement = () => {
                                                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                                         className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-800 rounded-xl py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                                                         placeholder="+254..."
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="md:col-span-2">
+                                                <label className="block text-xs font-bold text-slate-500 mb-1 ml-1">Email Address</label>
+                                                <div className="relative">
+                                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
+                                                    <input
+                                                        type="email"
+                                                        value={formData.email}
+                                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                        className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-800 rounded-xl py-2 pl-9 pr-3 text-sm text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                                                        placeholder="customer@example.com"
                                                     />
                                                 </div>
                                             </div>
