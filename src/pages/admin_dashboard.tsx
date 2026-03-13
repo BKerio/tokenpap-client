@@ -90,7 +90,7 @@ const BLUE_PALETTE = [
   '#3b82f6', // Blue-500
   '#60a5fa', // Blue-400
   '#93c5fd', // Blue-300
-  '#cbd5e1', // slate-300
+  '#cbd5e1', // Slate-300
 ];
 
 const getGreeting = () => {
@@ -109,7 +109,7 @@ const StatCard = ({ stat, index }: { stat: StatCardData; index: number }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.1 }}
-    className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 group"
+    className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-500/30 transition-all duration-300 group"
   >
     <div className="flex justify-between items-start">
       <div>
@@ -117,7 +117,7 @@ const StatCard = ({ stat, index }: { stat: StatCardData; index: number }) => (
         <h3 className="text-3xl font-bold text-slate-900 dark:text-white group-hover:text-blue-900 dark:group-hover:text-blue-400 transition-colors">{stat.value}</h3>
       </div>
       <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 group-hover:text-blue-600 dark:group-hover:text-blue-400 text-slate-400 dark:text-slate-500 transition-colors">
-        <stat.icon className="w-6 h-6" />
+        <stat.icon size={24} />
       </div>
     </div>
     <div className="mt-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
@@ -260,48 +260,6 @@ const Dashboard: React.FC = () => {
             </h1>
           </motion.div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          <Link to="/dashboard/attendance" className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col items-center text-center gap-4 group">
-            <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
-              <QrCode className="w-8 h-8" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">Orchestrate Attendance</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Scan QR codes and mark attendance for church events</p>
-            </div>
-          </Link>
-
-          <Link to="/dashboard/attendance" className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col items-center text-center gap-4 group">
-            <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
-              <FileText className="w-8 h-8" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">Attendance Reports</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Generate and view detailed attendance analytics</p>
-            </div>
-          </Link>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm"
-        >
-          <div className="flex justify-between items-center mb-6">
-            <div>
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white">Quick Statistics</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Operational overview</p>
-            </div>
-          </div>
-          <div className="text-center py-12">
-            <Activity className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-            <p className="text-slate-500">Access the attendance management page for real-time monitoring and reporting.</p>
-            <Link to="/dashboard/attendance" className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all">
-              Launch Attendance Module <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </motion.div>
       </div>
     );
   }
@@ -334,16 +292,15 @@ const Dashboard: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <div className="flex items-center gap-3 mb-2">
-
-            <p className="text-slate-500 dark:text-slate-400 font-medium flex items-center gap-2">
-              <Calendar className="w-4 h-4" /> {dayjs().format('dddd, D MMMM YYYY')}
+            <p className="text-slate-500 dark:text-slate-400 font-medium flex items-center gap-2 text-sm">
+              <Calendar size={16} /> {dayjs().format('dddd, D MMMM YYYY')}
             </p>
           </div>
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
             {greeting.text}, <span className="text-blue-900 dark:text-blue-400">{user.name || 'Admin'}</span>
           </h1>
           {user.bio && (
-            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl italic">
+            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl italic text-sm">
               &ldquo;{user.bio}&rdquo;
             </p>
           )}
@@ -353,10 +310,10 @@ const Dashboard: React.FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full shadow-sm text-sm font-medium text-slate-600 dark:text-slate-400"
+            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full shadow-sm text-xs font-medium text-slate-600 dark:text-slate-400"
           >
-            <div className="w-3 h-3 bg-green-700 dark:bg-green-500 rounded-full animate-pulse"></div>
-            System is Fully Operational
+            <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+            System Operational
           </motion.div>
 
           {user.roles && user.roles.length > 0 && (
@@ -389,10 +346,10 @@ const Dashboard: React.FC = () => {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3"
+                  className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-500/30 hover:shadow-md transition-all cursor-pointer flex flex-col items-center text-center gap-3"
                 >
                   <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center text-blue-900 dark:text-blue-400 group-hover:bg-blue-900 dark:group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                    <action.icon className="w-6 h-6" />
+                    <action.icon size={22} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm">{action.text}</h4>
@@ -471,14 +428,14 @@ const Dashboard: React.FC = () => {
             <div className="divide-y divide-slate-100 dark:divide-slate-800 max-h-[350px] overflow-y-auto">
               {vendors.slice(0, 7).map((v) => (
                 <div key={v.id} className="p-4 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-blue-950 dark:bg-blue-800 text-white flex items-center justify-center text-xs font-bold shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 dark:bg-blue-800 text-white flex items-center justify-center text-xs font-bold shadow-sm">
                     {v.business_name?.substring(0, 2).toUpperCase() || 'NA'}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold text-slate-800 dark:text-slate-200 truncate">{v.business_name || 'Unnamed Vendor'}</p>
                     <p className="text-xs text-slate-500 dark:text-slate-500 truncate">{v.vendor_type || 'Unknown'} • {v.bank_name || 'No Bank'}</p>
                   </div>
-                  <div className={cn("w-2 h-2 rounded-full", v.status === 'active' ? 'bg-green-500' : 'bg-red-400')}></div>
+                  <div className={cn("w-1.5 h-1.5 rounded-full", v.status === 'active' ? 'bg-emerald-500' : 'bg-rose-500')}></div>
                 </div>
               ))}
               {vendors.length === 0 && (
@@ -493,7 +450,7 @@ const Dashboard: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-[#0A1F44] dark:bg-slate-900 rounded-2xl shadow-lg p-6 text-white relative overflow-hidden border dark:border-slate-800"
+            className="bg-[#0A1F44] dark:bg-slate-900 rounded-2xl shadow-lg p-6 text-white relative overflow-hidden border border-slate-700 dark:border-slate-800"
           >
             <div className="absolute top-0 right-0 opacity-10 transform translate-x-8 -translate-y-8">
               <Building size={150} />
@@ -501,24 +458,24 @@ const Dashboard: React.FC = () => {
 
             <div className="relative z-10">
               <h3 className="font-bold text-lg mb-1">Network Status</h3>
-              <p className="text-blue-200 dark:text-slate-400 text-xs mb-6">Overview of registered entities</p>
+              <p className="text-blue-200 dark:text-blue-400/60 text-xs mb-6 font-medium">Overview of registered entities</p>
 
               <div className="space-y-4">
-                <div className="flex justify-between items-center border-b border-blue-800 dark:border-slate-800 pb-2">
-                  <span className="text-sm text-blue-100 dark:text-slate-300 flex items-center gap-2">
-                    <Building2 className="w-4 h-4" /> Total Vendors
+                <div className="flex justify-between items-center border-b border-blue-800/50 dark:border-slate-800/50 pb-2 text-sm">
+                  <span className="text-blue-100 dark:text-slate-300 flex items-center gap-2">
+                    <Building2 size={16} /> Total Vendors
                   </span>
                   <span className="font-bold">{vendors.length}</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-blue-800 dark:border-slate-800 pb-2">
-                  <span className="text-sm text-blue-100 dark:text-slate-300 flex items-center gap-2">
-                    <Gauge className="w-4 h-4" /> Active Meters
+                <div className="flex justify-between items-center border-b border-blue-800/50 dark:border-slate-800/50 pb-2 text-sm">
+                  <span className="text-blue-100 dark:text-slate-300 flex items-center gap-2">
+                    <Gauge size={16} /> Active Meters
                   </span>
                   <span className="font-bold">{meters.filter(m => m.status === 'active').length}</span>
                 </div>
               </div>
 
-              <Link to="/dashboard/vendors" className="mt-6 w-full py-2 bg-white dark:bg-blue-700 text-blue-950 dark:text-white text-sm font-bold rounded-lg flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-600 transition-colors">
+              <Link to="/dashboard/vendors" className="mt-6 w-full py-2.5 bg-white dark:bg-blue-600 text-blue-900 dark:text-white text-sm font-bold rounded-xl flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-500 transition-all shadow-sm">
                 Review Fleet
               </Link>
             </div>

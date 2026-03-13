@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { getVendorLogoUrl } from '@/lib/utils';
 
 import { LayoutDashboard, LogOut, ArrowRight, Activity, Shield, User, Building2, Gauge, Users, ShieldCheck, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -32,7 +33,7 @@ interface SidebarProps {
   onCloseMobile: () => void;
 }
 
-const Sidebar = ({ user, sidebarOpen, isMobile, onLogout, onCloseMobile }: SidebarProps) => {
+const Sidebar = ({ user, vendorProfile, sidebarOpen, isMobile, onLogout, onCloseMobile }: SidebarProps) => {
   const location = useLocation();
 
   const isVendor = user.role === 'vendor' || user.roles?.includes('vendor');
@@ -169,8 +170,7 @@ const Sidebar = ({ user, sidebarOpen, isMobile, onLogout, onCloseMobile }: Sideb
         <div className="h-6 w-full" />
 
         {/* Vendor logo in sidebar (when enabled) */}
-
-
+        
         {/* Navigation */}
         <div className="flex-1 overflow-y-auto overflow-x-hidden py-4 px-4 space-y-2 custom-scrollbar">
           <AnimatePresence>

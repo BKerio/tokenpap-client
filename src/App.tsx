@@ -16,6 +16,7 @@ import CustomerManagement from '@/pages/vendor/CustomerManagement';
 import CompanyDashboard from '@/pages/vendor/CompanyDashboard';
 import IndividualDashboard from '@/pages/vendor/IndividualDashboard';
 import LipaTokenNaMpesa from '@/pages/vendor/LipaTokenNaMpesa';
+import VendingSettingsPage from '@/pages/admin/vending';
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
               <Route path="vendor-overview" element={<AdminMeter />} />
               <Route path="meters" element={<Meters />} />
               <Route path="customer-management" element={<CustomerManagement />} />
-              <Route path="vending-control" element={<div className="p-8">Vending Control Coming Soon</div>} />
+              <Route path="vending-control" element={<VendingSettingsPage />} />
               <Route path="system-config" element={<SystemConfigPage />} />
               <Route path="lipa-mpesa" element={<LipaTokenNaMpesa />} />
               <Route path="branding" element={<Branding />} />

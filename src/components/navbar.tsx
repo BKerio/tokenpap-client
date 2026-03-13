@@ -54,7 +54,7 @@ const Navbar = ({ user, vendorProfile, onToggleSidebar, showSidebarToggle = fals
 
     const result = await Swal.fire({
       title: 'Ready to leave?',
-      text: 'You are about to sign out of the admin panel.',
+      text: 'You are about to sign out of the system.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#ef4444',
@@ -175,8 +175,8 @@ const Navbar = ({ user, vendorProfile, onToggleSidebar, showSidebarToggle = fals
                     </span>
                   ) : (
                     <div className="flex items-baseline gap-1.5 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white leading-none">TokenPaP</span>
-                      <span className="text-xs font-bold tracking-wide text-slate-500 dark:text-slate-400">Utility Dashboard</span>
+                      {/* <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white leading-none">TokenPaP</span> */}
+                      <span className="text-xs font-bold tracking-wide text-slate-500 dark:text-slate-400"> Tokenpap Utility Dashboard</span>
                     </div>
                   )}
                   <div className="mt-1 flex items-center">
@@ -280,7 +280,7 @@ const Navbar = ({ user, vendorProfile, onToggleSidebar, showSidebarToggle = fals
                     </div>
                     <div className="hidden md:block text-left mr-1">
                       <p className="text-sm font-bold text-slate-900 dark:text-slate-100 leading-none">{user.name}</p>
-                      <p className="text-[10px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider mt-0.5">{user.role || "Admin"}</p>
+                      <p className="text-[10px] text-black dark:text-white font-bold normal tracking-wider mt-0.5">{user.role || "Admin"}</p>
                     </div>
                     <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${isProfileOpen ? 'rotate-180' : ''}`} />
                   </button>
