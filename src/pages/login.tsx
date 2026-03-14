@@ -359,10 +359,18 @@ const Login = () => {
                   onClick={() => setCustomerChoice("otp")}
                   className="flex flex-col items-center justify-center p-4 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 bg-white dark:bg-slate-800 transition shadow-sm group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 mb-2 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                    <Smartphone size={20} />
+                  <div className="w-12 h-12 rounded-xl bg-[#0A1F44] dark:bg-[#0A1F44] flex items-center justify-center text-blue-600 mb-2 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <img
+                      src="https://www.svgrepo.com/show/210458/mobile-phone-smartphone.svg"
+                      alt="phone"
+                      draggable={false}
+                      className="w-5 h-5"
+                    />
                   </div>
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">SMS OTP</span>
+                
+                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">
+                    SMS OTP
+                  </span>
                 </motion.button>
 
                 <motion.button
@@ -370,12 +378,13 @@ const Login = () => {
                   whileTap={{ scale: 0.98 }}
                   type="button"
                   onClick={() => setCustomerChoice("google")}
-                  className="flex flex-col items-center justify-center p-4 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-red-500 bg-white dark:bg-slate-800 transition shadow-sm group"
+                  className="flex flex-col items-center justify-center p-4 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 bg-white dark:bg-slate-800 transition shadow-sm group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-600 mb-2 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#0A1F44] dark:bg-[#0A1F44] flex items-center justify-center text-blue-600 mb-2 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                     <img
                       src="https://www.svgrepo.com/show/475656/google-color.svg"
                       alt="Google"
+                      draggable={false}
                       className="w-5 h-5"
                     />
                   </div>
@@ -641,4 +650,3 @@ const Login = () => {
 };
 
 export default Login;
-;
