@@ -325,7 +325,7 @@ const Login = () => {
              className="flex flex-col items-center mb-5"
            >
              <div className="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shadow-inner mb-3">
-               <img src={Logo} alt="Token Utility System" className="w-10" />
+               <img src={Logo} alt="Token Utility System" className="w-12 h-12 object-contain" />
              </div>
            
              <h2 className="text-lg font-bold text-slate-800 dark:text-white text-center">
