@@ -220,8 +220,8 @@ const LipaTokenNaMpesa = () => {
                       <Loader2 className="w-6 h-6 text-blue-600 dark:text-blue-400 animate-spin" />
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-800 dark:text-blue-300 text-sm">Sending M-Pesa Prompt</p>
-                      <p className="text-xs text-blue-600/70 dark:text-blue-400/70 mt-0.5">Connecting to Safaricom...</p>
+                      <p className="font-semibold text-gray-900 dark:text-gray-900 text-sm">Sending M-Pesa Prompt</p>
+                      <p className="text-xs text-green-600/70 dark:text-green-400/70 mt-0.5">Connecting to Safaricom...</p>
                     </div>
                   </div>
                 </div>
