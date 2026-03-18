@@ -397,7 +397,7 @@ const Login = () => {
                   </div>
                 
                   <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">
-                    SMS OTP
+                    Use phone number
                   </span>
                 </motion.button>
 
@@ -416,7 +416,7 @@ const Login = () => {
                       className="w-5 h-5"
                     />
                   </div>
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">Google</span>
+                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">Use Google</span>
                 </motion.button>
               </div>
             ) : (
