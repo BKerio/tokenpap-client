@@ -8,7 +8,7 @@ import api from "@/lib/api";
 import Logo from "@/assets/icon.png";
 import React from "react";
 
-type LoginMode = "email" | "kanisa" | "customer";
+type LoginMode = "email" | "accountid" | "customer";
 
 interface ModeOption {
   value: LoginMode;
@@ -25,7 +25,7 @@ const modeOptions: ModeOption[] = [
     icon: <Mail className="w-5 h-5" />,
   },
   {
-    value: "kanisa",
+    value: "accountid",
     label: "Account ID",
     description: "Login using your account number",
     icon: <User className="w-5 h-5" />,
