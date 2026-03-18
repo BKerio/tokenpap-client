@@ -329,7 +329,7 @@ const Login = () => {
              </div>
            
              <h2 className="text-lg font-bold text-slate-800 dark:text-white text-center">
-               Tokenpap
+               Tokenpap Utility System
              </h2>
            
              <p className="text-[11px] text-slate-400 mt-1 text-center">
