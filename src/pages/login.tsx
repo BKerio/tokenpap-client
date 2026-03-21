@@ -625,7 +625,7 @@ const Login = () => {
                             className={`w-full flex items-center gap-3.5 p-3 rounded-xl border transition
                             ${
                               isSelected
-                                ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20 shadow-sm"
+                                ? "border-gray-500 bg-gray-50 dark:bg-gray-900/20 shadow-sm"
                                 : "border-slate-200 dark:border-slate-700/60 hover:bg-slate-50 dark:hover:bg-slate-800"
                             }`}
                           >
@@ -633,7 +633,7 @@ const Login = () => {
                               className={`w-9 h-9 flex items-center justify-center rounded-lg
                               ${
                                 isSelected
-                                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
+                                  ? "bg-gray-500 text-white shadow-md shadow-gray-500/20"
                                   : "bg-slate-100 dark:bg-slate-800 text-slate-500"
                               }`}
                             >
