@@ -237,7 +237,7 @@ const Vendors = () => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => handleOpenModal()}
-                                className="flex items-center gap-2 bg-slate-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all"
+                                className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all"
                             >
                                 <Plus size={18} />
                                 <span>Register Vendor</span>
@@ -634,7 +634,7 @@ const Vendors = () => {
                                         <button
                                             type="submit"
                                             disabled={submitting}
-                                            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all disabled:opacity-70"
+                                            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-800 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all disabled:opacity-70"
                                         >
                                             {submitting ? (
                                                 <Loader2 className="w-4 h-4 animate-spin" />
