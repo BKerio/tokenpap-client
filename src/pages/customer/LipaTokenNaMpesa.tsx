@@ -28,6 +28,7 @@ const LipaTokenNaMpesa = () => {
   const [paymentResult, setPaymentResult] = useState<PaymentResult>({ status: 'idle' });
   const [copiedToken, setCopiedToken] = useState<string | null>(null);
   const pollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const pollingStoppedRef = useRef<boolean>(false);
 
 
   // Cleanup polling on unmount
@@ -92,19 +93,31 @@ const LipaTokenNaMpesa = () => {
 
   const startPolling = (checkoutRequestId: string) => {
     let attempts = 0;
-    const maxAttempts = 30;
+    const maxAttempts = 10; // With 25s long-polling, 10 attempts cover >4 minutes
 
+    pollingStoppedRef.current = false;
     setPaymentResult({ status: 'waiting', meterNumber });
 
-    pollingRef.current = setInterval(async () => {
+    const poll = async () => {
+      if (pollingStoppedRef.current || attempts >= maxAttempts) {
+        if (attempts >= maxAttempts && !pollingStoppedRef.current) {
+          setPaymentResult({ status: 'timeout', meterNumber });
+          setLoading(false);
+        }
+        return;
+      }
+
       attempts++;
 
       try {
-        const response = await api.get(`/mpesa/query/${checkoutRequestId}`);
+        // Long poll: backend will wait up to 25s for the callback
+        const response = await api.get(`/mpesa/query/${checkoutRequestId}?wait=1`);
         const { status, amount: paidAmount, mpesa_receipt, failure_reason, result_desc, tokens } = response.data;
 
+        if (pollingStoppedRef.current) return;
+
         if (status === "confirmed") {
-          if (pollingRef.current) clearInterval(pollingRef.current);
+          pollingStoppedRef.current = true;
           setPaymentResult({
             status: 'confirmed',
             amount: paidAmount,
@@ -114,27 +127,27 @@ const LipaTokenNaMpesa = () => {
           });
           setLoading(false);
         } else if (status === "failed") {
-          if (pollingRef.current) clearInterval(pollingRef.current);
+          pollingStoppedRef.current = true;
           setPaymentResult({
             status: 'failed',
             failureReason: failure_reason || result_desc || "Transaction failed",
             meterNumber,
           });
           setLoading(false);
-        }
-
-        if (attempts >= maxAttempts && status === "pending") {
-          if (pollingRef.current) clearInterval(pollingRef.current);
-          setPaymentResult({
-            status: 'timeout',
-            meterNumber,
-          });
-          setLoading(false);
+        } else {
+          // Still pending or server timeout (25s reached), poll again immediately
+          poll();
         }
       } catch (error) {
         console.error("Polling error", error);
+        // Wait 2s before retrying on network error to avoid infinite loop
+        if (!pollingStoppedRef.current) {
+          setTimeout(poll, 2000);
+        }
       }
-    }, 2000);
+    };
+
+    poll();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
