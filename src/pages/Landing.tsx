@@ -276,8 +276,8 @@ function Landing() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-sm text-center">
-            <p>&copy; 2024 TokenPap. All rights reserved.</p>
+          <div className="border-t border-gray-800 pt-8 text-sm text-center relative z-10">
+            <p>&copy; {new Date().getFullYear()} TokenPap. All rights reserved.</p>
           </div>
         </div>
       </footer>
