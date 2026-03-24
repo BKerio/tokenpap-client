@@ -15,8 +15,8 @@ function Landing() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <Coins className="w-8 h-8 text-emerald-600" />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">TokenPap</span>
+              <Coins className="w-8 h-8 text-gray-800 dark:text-gray-700" />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">TokenPap System</span>
             </div>
 
             <div className="flex items-center gap-4">
