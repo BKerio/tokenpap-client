@@ -21,8 +21,8 @@ function Landing() {
 
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-8">
-                <a href="/features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Features</a>
-                <a href="/benefits" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Benefits</a>
+                <a href="#/features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Features</a>
+                <a href="#/benefits" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Benefits</a>
                 <button 
                   onClick={handleGetStarted}
                   className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
@@ -88,7 +88,7 @@ function Landing() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                  <Zap className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Lightning Fast</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -98,7 +98,7 @@ function Landing() {
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <Shield className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Bank-Grade Security</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -108,7 +108,7 @@ function Landing() {
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                  <BarChart3 className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Advanced Analytics</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -118,7 +118,7 @@ function Landing() {
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <Coins className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                  <Coins className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Multi-Token Support</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -128,7 +128,7 @@ function Landing() {
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <Shield className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Smart Automation</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -138,7 +138,7 @@ function Landing() {
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
                 <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                  <BarChart3 className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">API Integration</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
