@@ -87,7 +87,7 @@ function Landing() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
-                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gray-800 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Lightning Fast</h3>
@@ -97,7 +97,7 @@ function Landing() {
               </div>
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gray-800 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Bank-Grade Security</h3>
@@ -107,7 +107,7 @@ function Landing() {
               </div>
 
               <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800">
-                <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gray-800 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mb-4">
                   <BarChart3 className="w-6 h-6 text-gray-800 dark:text-gray-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Advanced Analytics</h3>
@@ -275,7 +275,7 @@ function Landing() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-sm text-center relative z-10">
-            <p>&copy; {new Date().getFullYear()} TokenPap. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} TokenPap Utility System. All rights reserved.</p>
           </div>
         </div>
       </footer>
