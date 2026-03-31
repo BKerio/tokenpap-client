@@ -162,8 +162,8 @@ const Landlords = () => {
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                         <div className="flex items-center gap-4 min-w-0">
-                            <div className="p-3.5 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/80 dark:to-emerald-900/30 border border-emerald-200/50 dark:border-emerald-800/50 rounded-2xl shrink-0 shadow-sm">
-                                <Home className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                            <div className="p-3.5 bg-gray-100 to-emerald-50 dark:from-emerald-900/80 dark:to-emerald-900/30 border border-emerald-200/50 dark:border-emerald-800/50 rounded-2xl shrink-0 shadow-sm">
+                                <Home className="w-6 h-6 text-gray-600 dark:text-gray-400" />
                             </div>
                             <div className="min-w-0">
                                 <h1 className="text-xl font-bold text-gray-900 dark:text-white truncate tracking-tight">
@@ -246,8 +246,8 @@ const Landlords = () => {
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-4">
                                                     <div className="relative">
-                                                        <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center border border-emerald-100/50 dark:border-emerald-800/50 group-hover:scale-105 transition-transform">
-                                                            <Home className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                                                        <div className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-700 flex items-center justify-center border border-gray-200 dark:border-gray-600 group-hover:scale-105 transition-transform">
+                                                            <Home className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                                                         </div>
                                                         <div className={`absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full border-2 border-white dark:border-gray-800 ${landlord.status === 'active' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
                                                     </div>
@@ -275,7 +275,7 @@ const Landlords = () => {
                                             </td>
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-2">
-                                                    <div className="w-7 h-7 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg flex items-center justify-center text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800">
+                                                    <div className="w-7 h-7 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-600">
                                                         <CreditCard size={14} />
                                                     </div>
                                                     <span className="text-xs font-bold text-gray-700 dark:text-gray-200 tracking-tight">
@@ -297,7 +297,7 @@ const Landlords = () => {
                                                 <div className="flex justify-end gap-1">
                                                     <button
                                                         onClick={() => handleOpenModal(landlord)}
-                                                        className="p-2 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg transition-colors"
+                                                        className="p-2 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-gray-900/20 rounded-lg transition-colors"
                                                         title="Edit"
                                                     >
                                                         <Edit2 size={16} />
@@ -499,7 +499,7 @@ const Landlords = () => {
                                     <button
                                         type="submit"
                                         disabled={submitting}
-                                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-800 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all disabled:opacity-70"
+                                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all disabled:opacity-70"
                                     >
                                         {submitting ? (
                                             <Loader2 className="w-4 h-4 animate-spin" />

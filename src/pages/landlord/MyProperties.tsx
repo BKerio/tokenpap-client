@@ -7,7 +7,6 @@ import {
     MapPin,
     Building2,
     Users,
-    Activity,
     AlertTriangle,
     RefreshCw,
     Edit2,
